@@ -19,14 +19,14 @@ $(".quiz .btn").on("click", function (event) {
             $(".endmessage").css("display", "block")
             $("#total").text(correctAnswers + "/" + answered)
             var link = document.createElement('a');
-                link.setAttribute('href', 'https://twitter.com/share');
-                link.setAttribute('class', 'twitter-share-button');
-                link.setAttribute('style', 'margin-top:5px;');
-                link.setAttribute("data-text" , "I just got " + correctAnswers + "/" + answered + " on this quiz about Greenwich place names. Give it a go here: http://wp.me/p60KF6-79");
-                link.setAttribute("data-size" ,"large") ;
-                $(".twitter").append(link)
-                twttr.widgets.load();  //very important
-
+            link.setAttribute('href', 'https://twitter.com/share');
+            link.setAttribute('class', 'twitter-share-button');
+            link.setAttribute('style', 'margin-top:5px;');
+            link.setAttribute("data-text" , "I just got " + correctAnswers + "/" + answered + " on this quiz about Greenwich place names. Give it a go here:");
+            link.setAttribute("data-url", "http://wp.me/p60KF6-79");
+            link.setAttribute("data-size", "large");
+            $(".twitter").append(link);
+            twttr.widgets.load();  //very important
         }
             if (correctAnswers <= 4) {
                 $("#message").text("Good effort but you may want to do a bit more swotting on the area.")
